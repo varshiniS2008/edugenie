@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EduGenie AI - AI Assistant</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f2f6ff;
+        }
+
+        header {
+            background: #4b6cff;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px #ccc;
+            text-align: center;
+        }
+
+        h2 {
+            color: #4b6cff;
+        }
+
+        .input-box {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        input {
+            flex: 1;
+            padding: 14px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 14px 20px;
+            background: #4b6cff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #304dcc;
+        }
+
+        #answer {
+            margin-top: 25px;
+            padding: 20px;
+            background: #eef2ff;
+            border-radius: 10px;
+            min-height: 30px;
+            text-align: left;
+        }
+
+        .links {
+            margin-top: 25px;
+        }
+
+        .links a {
+            display: inline-block;
+            margin: 5px;
+            padding: 10px 15px;
+            background: #4b6cff;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>EduGenie AI Assistant</h1>
+    <p>Your Personal Learning Assistant</p>
+</header>
+
+<div class="container">
+
+    <h2>Ask AI</h2>
+
+    <p>Ask your learning question below:</p>
+
+    <div class="input-box">
+
+        <input
+            type="text"
+            id="question"
+            placeholder="Example: What is HTML?"
+        >
+
+        <button onclick="askAI()">
+            Ask AI
+        </button>
+
+    </div>
+
+    <div id="answer">
+        Your answer will appear here.
+    </div>
+
+    <div class="links">
+        <a href="index.html"> Home</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="courses.html">Courses</a>
+        <a href="quiz.html">Quiz</a>
+    </div>
+
+</div>
+
+<script>
+
+function askAI() {
+
+    let question =
+        document.getElementById("question").value.toLowerCase().trim();
+
+    let answer = "";
+
+    if (question === "") {
+
+        answer = "Please enter a question.";
+
+    }
+
+    else if (question.includes("html")) {
+
+        answer =
+        "HTML stands for HyperText Markup Language. It is used to create the structure of webpages.";
+
+    }
+
+    else if (question.includes("css")) {
+
+        answer =
+        "CSS stands for Cascading Style Sheets. It is used to style and design webpages.";
+
+    }
+
+    else if (question.includes("javascript")) {
+
+        answer =
+        "JavaScript is a programming language used to make webpages interactive.";
+
+    }
+
+    else if (question.includes("python")) {
+
+        answer =
+        "Python is a popular programming language. It is easy to learn and widely used.";
+
+    }
+
+    else if (question.includes("database")) {
+
+        answer =
+        "A database is used to store, organize and manage information.";
+
+    }
+
+    else if (question.includes("mysql")) {
+
+        answer =
+        "MySQL is a popular database management system used to store and manage data.";
+
+    }
+
+    else if (question.includes("php")) {
+
+        answer =
+        "PHP is a server-side programming language commonly used to create dynamic websites.";
+
+    }
+
+    else if (question.includes("what is programming")) {
+
+        answer =
+        "Programming is the process of writing instructions that tell a computer what to do.";
+
+    }
+
+    else {
+
+        answer =
+        "I am EduGenie AI Assistant. Please ask about HTML, CSS, JavaScript, Python, PHP, MySQL or Database.";
+
+    }
+
+    document.getElementById("answer").innerHTML =
+        "<strong>EduGenie AI:</strong><br><br>" + answer;
+}
+
+</script>
+
+</body>
+</html>
